@@ -1,1 +1,8 @@
 /target/
+/bin/
+/screenshots/
+.classpath
+.project
+/drivers/
+/.settings/
+
