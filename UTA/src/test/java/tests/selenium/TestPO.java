@@ -7,14 +7,14 @@ import org.junit.jupiter.api.TestInfo;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
-import common.BaseTest;
+import common.BaseTestSelenium;
 import pages.selenium.HomePage;
 import pages.selenium.LoginPage;
 
-public class TestPO extends BaseTest
+public class TestPO extends BaseTestSelenium
 {
 	@Test
-	public void validLogin(TestInfo info)
+	void validLogin(TestInfo info)
 	{
 		printTestName(info);		
 		HomePage homePage = LoginPage.open(driver)
@@ -22,7 +22,7 @@ public class TestPO extends BaseTest
 		assertTrue(homePage.getLoginConfirmation().contains("You logged into"));
 		
 		LoginPage loginPage = homePage.logout();
-		assertTrue(loginPage.getConfirmation().contains("You logged iut"));
+		assertTrue(loginPage.getConfirmation().contains("You logged out"));
 	}
 
 	@ParameterizedTest
